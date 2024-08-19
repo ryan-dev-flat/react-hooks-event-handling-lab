@@ -3,13 +3,16 @@
 import React from 'react';
 
 function Keypad() {
-  const handleChange = () => {
-    console.log('Entering password...');
-  };
-
+  function handleChange(event) {
+    console.log('Entering password...')
+  }
   return (
-    <input type="password" onChange={handleChange} />
-  );
-}
-
+    <div>
+      <input
+        type="password"
+        name="password"
+        onChange={handleChange}
+        placeholder="Enter Password"
+      ></input>Password</div>
+    )}
 export default Keypad;

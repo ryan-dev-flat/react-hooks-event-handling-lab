@@ -1,17 +1,25 @@
 import React from 'react';
+import reactDom from 'react-dom';
+import { useState } from "react"
 
 function EyesOnMe() {
-  const handleFocus = () => {
-    console.log('Good!');
-  };
+  const [isFocused, setIsFocused] = useState(false)
 
-  const handleBlur = () => {
-    console.log('Hey! Eyes on me!');
-  };
+  function handleFocus(event) {
+    setIsFocused(true)
+    console.log("Good!")
+  }
+  function handleBlur(event) {
+    setIsFocused(false)
+    console.log("Hey! Eyes on me!")
+  }
 
   return (
-    <button onFocus={handleFocus} onBlur={handleBlur}>Eyes on me</button>
+    <div>
+      <button onFocus={handleFocus} onBlur={handleBlur}>Eyes on Me</button>
+    </div>
   );
-}
+};
+
 
 export default EyesOnMe;
